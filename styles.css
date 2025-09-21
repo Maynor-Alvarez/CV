@@ -299,11 +299,11 @@ img {
   border: 1px solid var(--border);
   filter: contrast(1.05) saturate(1.05) brightness(.95)
 }
-
+/* Responsive Skills Grid */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
 }
 
 .skill {
@@ -313,12 +313,39 @@ img {
   padding: 10px 12px;
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 12px
+  border-radius: 12px;
+  font-size: 15px;
 }
 
 .skill img {
   width: 28px;
-  height: 28px
+  height: 28px;
+  border-radius: 6px;
+}
+
+.skill span {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Tablet view */
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small phone view */
+@media (max-width: 400px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  .skill {
+    font-size: 14px;
+    padding: 8px;
+  }
 }
 
 .experience .org {
